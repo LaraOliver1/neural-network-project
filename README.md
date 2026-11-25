@@ -53,6 +53,14 @@ dataset-resized/
 | `common.py` | Código compartilhado pelos 6 treinos: semente, classes, pipeline de dados, callbacks e registro de custo |
 | `02_mlp.py` | Treino dos experimentos `mlp_128_sem` e `mlp_128_com` |
 | `treino_mlp_colab.ipynb` | Notebook para rodar o `02_mlp.py` no Colab |
+| `03_cnn.py` | Treino dos experimentos CNN: `cnn_128_sem` e `cnn_128_com` (padrão); também `cnn_256_sem` e `cnn_512_sem` (pessoa 4), com a **mesma** arquitetura |
+| `treino_cnn_colab.ipynb` | Notebook para rodar o `03_cnn.py` no Colab + comparação MLP × CNN e efeito dos pesos por classe (só validação) |
+
+**Pessoa 4 (resolução):** use o mesmo script, que garante a mesma CNN (com global average pooling, os parâmetros são iguais nas 3 resoluções):
+```bash
+python 03_cnn.py --exp cnn_256_sem cnn_512_sem
+python 03_cnn.py --exp cnn_512_sem --batch_size 16   # só se faltar memória (registre e justifique)
+```
 
 Para regenerar (não é necessário, o resultado é sempre o mesmo):
 ```bash
@@ -157,9 +165,9 @@ model.fit(train_ds, validation_data=val_ds, epochs=..., class_weight=class_weigh
 |---|---|---|---|
 | 1 | Dados e EDA | `01_eda_split.py`, extra YOLO (`04_yolo.py`) | ✅ `split.json`, figuras · ⏳ YOLO |
 | 2 | MLP | `mlp_128_sem`, `mlp_128_com` | 2 modelos, histórico, texto |
-| 3 | CNN 128 | `cnn_128_sem`, `cnn_128_com` | 2 modelos, histórico, texto |
+| 3 | CNN 128 | `03_cnn.py`: `cnn_128_sem`, `cnn_128_com` | ✅ script · ⏳ 2 modelos, histórico, texto |
 | 4 | Resolução | `cnn_256_sem`, `cnn_512_sem` + tempo e memória | 2 modelos, custo × ganho |
-| 5 | Resultados | `03_resultados.py`, tabelas, matrizes, curvas, análise de erros | Seção de resultados |
+| 5 | Resultados | `05_resultados.py`, tabelas, matrizes, curvas, análise de erros | Seção de resultados |
 | 6 | README e revisão | README final, modelos no Drive, ABNT, limite de 10 páginas | Repositório e PDF final |
 
 ### Os 6 experimentos
