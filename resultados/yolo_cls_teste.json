@@ -1,0 +1,44 @@
+{
+  "f1_macro": 0.9072433637423497,
+  "acuracia": 0.9155672823218998,
+  "por_classe": {
+    "glass": {
+      "precision": 0.9333,
+      "recall": 0.9333,
+      "f1-score": 0.9333,
+      "support": 75.0
+    },
+    "paper": {
+      "precision": 0.88,
+      "recall": 0.9778,
+      "f1-score": 0.9263,
+      "support": 90.0
+    },
+    "cardboard": {
+      "precision": 1.0,
+      "recall": 0.8667,
+      "f1-score": 0.9286,
+      "support": 60.0
+    },
+    "plastic": {
+      "precision": 0.9385,
+      "recall": 0.8472,
+      "f1-score": 0.8905,
+      "support": 72.0
+    },
+    "metal": {
+      "precision": 0.8676,
+      "recall": 0.9672,
+      "f1-score": 0.9147,
+      "support": 61.0
+    },
+    "trash": {
+      "precision": 0.8947,
+      "recall": 0.8095,
+      "f1-score": 0.85,
+      "support": 21.0
+    }
+  },
+  "tempo_inferencia_teste_s": 3.4,
+  "n_imagens": 379
+}
